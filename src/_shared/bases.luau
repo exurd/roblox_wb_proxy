@@ -22,13 +22,16 @@ end
 
 function m:_GetPaginatedBase(url: string, limit: string|number, pageCursor: string, sortOrder: string, prefix: string)
 	prefix = prefix or "?"
+	if prefix ~= "?" then
+		prefix = prefix .. "&"
+	end
 	limit = limit or ""
 	if limit ~= "" then
 		limit = "limit=" .. tostring(limit)
 	end
 	sortOrder = sortOrder or ""
 	if sortOrder ~= "" then
-		sortOrder = "sortOrder=" .. tostring(sortOrder)
+		sortOrder = "&sortOrder=" .. tostring(sortOrder)
 	end
 
 	local combined_url = url .. prefix .. limit .. sortOrder
