@@ -1,7 +1,7 @@
 -- Apis/Advanced --
 -- for apis that have a very niche usage
 
-local bases = require("./_shared/bases")
+local bases = require("../_shared/bases")
 
 local m = {}
 
