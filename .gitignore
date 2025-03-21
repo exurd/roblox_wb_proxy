@@ -1,3 +1,7 @@
+debug/
+sourcemap.json
+*.rbxm
+
 # Compiled Lua sources
 luac.out
 
