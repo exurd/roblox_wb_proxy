@@ -4,7 +4,7 @@ A ModuleScript that uses the Internet Archive's [Wayback Machine](https://web.ar
 ## How it works
 The Wayback Machine's "[Save Page Now](https://blog.archive.org/2019/10/23/the-wayback-machines-save-page-now-is-new-and-improved/)" feature allows anyone to anonymously add a URL into their database. This allows others to archive content that can disappear in the future.
 
-Due to how SPN works, cookie / .ROBLOSECURITY support cannot be added to this proxy. The saving functionality does accept cookies (this is to keep saved pages as neutral as possible). This means roblox_wb_proxy can only get API responses that do not need authentication.
+Due to how SPN works, cookie / .ROBLOSECURITY support cannot be added to this proxy. Their saving functionality does not accept cookies (this is to keep saved pages as neutral as possible). This means roblox_wb_proxy can only get API responses that do not need authentication.
 
 ### Saving rate limit
 The rate limit for saving a new snapshot of a URL is around 1 hour (which can vary). I recommend using the default settings, with "SAVE_FIRST" disabled (see below example code for more details).
