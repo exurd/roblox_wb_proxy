@@ -1,10 +1,13 @@
 -- roblox_wb_proxy init --
 local m = {}
 
-m.RobloxApi = require("./roblox_wb_proxy/RobloxApi")
-m.RobloxAdvancedApis = require("./roblox_wb_proxy/RobloxApi/Advanced")
 m.Requester = require("./roblox_wb_proxy/_shared/requester")
 m.Bases = require("./roblox_wb_proxy/_shared/bases")
+
+m.RobloxApi = require("./roblox_wb_proxy/RobloxApi")
+m.RobloxAdvancedApis = require("./roblox_wb_proxy/RobloxApi/Advanced")
+
+m.ValuableBadgeDatabase = require("./roblox_wb_proxy/ValuableBadgeDatabase")
 
 return m
 
