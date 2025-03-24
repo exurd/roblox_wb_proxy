@@ -19,6 +19,7 @@ end
 
 
 function m:GetRequest(url: string, headers: table)
+	print("Requesting", url .. "...")
 	local success, res = pcall(HttpService.RequestAsync, HttpService, {
 		Url = url,
 		Method = "GET",
@@ -44,6 +45,7 @@ end
 
 
 function m:GetRequestWB(url: string)
+	print("Requesting", url, "in WBM...")
 	local wb_url
 	local success, res
 	if FastFlags.SAVE_FIRST then

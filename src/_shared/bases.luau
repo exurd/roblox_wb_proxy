@@ -38,7 +38,6 @@ function m:_GetPaginatedBase(url: string, limit: string|number, pageCursor: stri
 	if pageCursor ~= "" then
 		combined_url = string.format("%s&cursor=%s", combined_url, pageCursor)  -- &cursor=*
 	end
-	print(combined_url)
 	return self:_GetInfoBase(combined_url)
 end
 
