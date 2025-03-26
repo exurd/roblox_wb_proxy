@@ -15,6 +15,7 @@ function m:GetGamepassInfo(gamepass_id: string|number)
 end
 
 function m:MultiGetToolboxDetails(asset_ids: {string|number})
+	table.sort(asset_ids)
 	return bases:_GetInfoBase(
 		string.format("https://apis.roblox.com/toolbox-service/v1/items/details?assetIds=%s", tostring(table.concat(asset_ids, ",")))
 	)
@@ -84,6 +85,7 @@ function m:GetUserOwnedBadges(user_id: string|number, limit: string|number, page
 end
 
 function m:MultiGetBadgeAwardedDates(user_id: string|number, badge_ids: {string|number})
+	table.sort(badge_ids)
 	return bases:_GetInfoBase(
 		string.format("https://badges.roblox.com/v1/users/%s/badges/awarded-dates?badgeIds=%s", tostring(user_id), tostring(table.concat(badge_ids, ",")))
 	)
@@ -160,6 +162,7 @@ end
 
 
 function m:MultiGetBundleInfo(bundle_ids: {string|number})
+	table.sort(bundle_ids)
 	return bases:_GetInfoBase(
 		string.format("https://catalog.roblox.com/v1/bundles/details?bundleIds=%s", tostring(table.concat(bundle_ids, ",")))
 	)
@@ -205,12 +208,14 @@ function m:GetUniversePlaces(universe_id: string|number, isUniverseCreation: boo
 end
 
 function m:MultiGetUniverseInfo(universe_ids: {string|number})
+	table.sort(universe_ids)
 	return bases:_GetInfoBase(
 		string.format("https://develop.roblox.com/v1/universes/multiget?ids=%s", tostring(table.concat(universe_ids, ",")))
 	)
 end
 
 function m:MultiGetPluginInfo(plugin_ids: {string|number})
+	table.sort(plugin_ids)
 	return bases:_GetInfoBase(
 		string.format("https://develop.roblox.com/v1/plugins?pluginIds=%s", tostring(table.concat(plugin_ids, ",")))
 	)
@@ -403,6 +408,7 @@ function m:GetUniverseGamepasses(universe_id: string|number, limit: string|numbe
 end
 
 function m:MultiGetGameDetails(universe_ids: {string|number})
+	table.sort(universe_ids)
 	return bases:_GetInfoBase(
 		string.format("https://games.roblox.com/v1/games?universeIds=%s", tostring(table.concat(universe_ids, ",")))
 	)
@@ -412,6 +418,7 @@ function m:GetGameDetails(universe_id: string|number)  -- alias of MultiGetGameD
 end
 
 function m:MultiGetGameProductInfo(universe_ids: {string|number})
+	table.sort(universe_ids)
 	return bases:_GetInfoBase(
 		string.format("https://games.roblox.com/v1/games/games-product-info?universeIds=%s", tostring(table.concat(universe_ids, ",")))
 	)
@@ -421,6 +428,7 @@ function m:GetGameProductInfo(universe_id: string|number)  -- alias of MultiGetG
 end
 
 function m:MultiGetUniverseVotes(universe_ids: {string|number})
+	table.sort(universe_ids)
 	return bases:_GetInfoBase(
 		string.format("https://games.roblox.com/v1/games/votes?universeIds=%s", tostring(table.concat(universe_ids, ",")))
 	)
