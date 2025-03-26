@@ -4,7 +4,7 @@ local HttpService = game:GetService("HttpService")
 
 local FastFlags = {
 	SAVE_FIRST = false :: boolean,                -- save urls first instead of finding cached version on wbm
-	USE_TIMESTAMP = nil :: string,               -- use this timestamp instead of using now as timestamp
+	USE_TIMESTAMP = "nil" :: string,               -- use this timestamp instead of using now as timestamp
 	INCLUDE_HOUR_IN_TIMESTAMP = true :: boolean  -- put the current hour in now timestamp
 }
 
@@ -94,7 +94,7 @@ end
 
 function m:CheckUrlInWB(url: string)
 	local timestamp
-	if FastFlags.USE_TIMESTAMP ~= nil then
+	if FastFlags.USE_TIMESTAMP ~= "nil" then
 		timestamp = tostring(FastFlags.USE_TIMESTAMP)
 	else
 		timestamp = _GetNowAsTimestamp()
