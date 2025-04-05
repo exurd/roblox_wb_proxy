@@ -8,7 +8,7 @@ local m = {}
 
 function m:BoR_MultiQueryBadges(badge_ids: {string|number})
 	table.sort(badge_ids)
-    return bases:_GetInfoBase(
+	return bases:_GetInfoBase(
 		string.format("https://bor-valuable-badge-database-production.up.railway.app/api/v3/query/bybadgeids?badgeIds=%s", tostring(table.concat(badge_ids, ",")))
 	)
 end
@@ -18,7 +18,7 @@ end
 
 function m:BoR_MultiQueryUniverses(universe_ids: {string|number})
 	table.sort(universe_ids)
-    return bases:_GetInfoBase(
+	return bases:_GetInfoBase(
 		string.format("https://bor-valuable-badge-database-production.up.railway.app/api/v3/query/byuniverseids?universeIds=%s", tostring(table.concat(universe_ids, ",")))
 	)
 end
@@ -28,12 +28,12 @@ end
 
 function m:BoR_MultiReportMissingBadgesInDatabase(badge_ids: {string|number})
 	table.sort(badge_ids)
-    return bases:_GetInfoBase(
+	return bases:_GetInfoBase(
 		string.format("https://bor-valuable-badge-database-production.up.railway.app/api/v3/user/reportmissing?badgeIds=%s", tostring(table.concat(badge_ids, ",")))
 	)
 end
 function m:BoR_ReportMissingBadgeInDatabase(badge_id: string|number)  -- alias of BoR_MultiReportMissingBadgesInDatabase
-    return self:BoR_MultiReportMissingBadgesInDatabase({badge_id})
+	return self:BoR_MultiReportMissingBadgesInDatabase({badge_id})
 end
 
 function m:BoR_RequestUniverseCheck(universe_id: string|number)

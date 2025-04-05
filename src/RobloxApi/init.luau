@@ -7,6 +7,14 @@ local bases = require("./_shared/bases")
 local m = {}
 
 
+-- accountinformation.roblox.com
+function m:GetUserRobloxBadges(user_id: string|number)
+	return bases:_GetInfoBase(
+		string.format("https://accountinformation.roblox.com/v1/users/%s/roblox-badges", tostring(user_id))
+	)
+end
+
+
 -- apis.roblox.com
 function m:GetGamepassInfo(gamepass_id: string|number)
 	return bases:_GetInfoBase(
@@ -103,22 +111,6 @@ end
 
 
 -- catalog.roblox.com
-function m:GetAssetToCategoryList()
-	return bases:_GetInfoBase("https://catalog.roblox.com/v1/asset-to-category")
-end
-
-function m:GetAssetToSubcategoryList()
-	return bases:_GetInfoBase("https://catalog.roblox.com/v1/asset-to-subcategory")
-end
-
-function m:GetCatalogCategories()
-	return bases:_GetInfoBase("https://catalog.roblox.com/v1/categories")
-end
-
-function m:GetCatalogSubcategories()
-	return bases:_GetInfoBase("https://catalog.roblox.com/v1/subcategories")
-end
-
 function m:GetBundleRecommendations(bundle_id: string|number, num_items: string|number)
 	num_items = num_items or 20
 	return bases:_GetInfoBase(

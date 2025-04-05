@@ -20,12 +20,36 @@ function m:DeliverAsset(user_id) -- alias of GetAsset
 end
 
 
+-- badges.roblox.com
+function m:GetPlayerBadgeMetadata()
+	return bases:_GetInfoBase("https://badges.roblox.com/v1/badges/metadata")
+end
+
+
+-- catalog.roblox.com
+function m:GetAssetToCategoryList()
+	return bases:_GetInfoBase("https://catalog.roblox.com/v1/asset-to-category")
+end
+
+function m:GetAssetToSubcategoryList()
+	return bases:_GetInfoBase("https://catalog.roblox.com/v1/asset-to-subcategory")
+end
+
+function m:GetCatalogCategories()
+	return bases:_GetInfoBase("https://catalog.roblox.com/v1/categories")
+end
+
+function m:GetCatalogSubcategories()
+	return bases:_GetInfoBase("https://catalog.roblox.com/v1/subcategories")
+end
+
+
 -- clientsettings.roblox.com
 function m:GetClientVersionInfo(binaryType: string, channelName: string)  -- binaryType: WindowsPlayer, WindowsStudio, MacPlayer or MacStudio
-    channelName = channelName or ""
-    if channelName ~= "" then
-        channelName = "/" .. channelName
-    end
+	channelName = channelName or ""
+	if channelName ~= "" then
+		channelName = "/" .. channelName
+	end
 	return bases:_GetInfoBase(
 		string.format("https://clientsettings.roblox.com/v2/client-version/%s%s", tostring(binaryType), tostring(channelName))
 	)

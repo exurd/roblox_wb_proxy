@@ -43,13 +43,13 @@ end
 
 
 function m:_DownloadBase(url: string)
-    local res = requester:GetRequestWB(url)
+	local res = requester:GetRequestWB(url)
 	if res ~= nil then
 		if res.StatusCode == 200 then
 			return res
 		end
 	end
-    warn("Failed to get info for " .. tostring(url))
+	warn("Failed to get info for " .. tostring(url))
 	return nil
 end
 
